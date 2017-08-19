@@ -130,7 +130,14 @@ char *showBits(Word val, char *buf)
    buf[1] = ' ';
    buf[10] = ' ';
    int i = 0;
-   buf[0] = '0';
+   if((u.bits.sign & 0) == 1)
+   {
+      buf[0] = '0';
+   }
+   else
+   {
+      buf[0] = '1';
+   }
    Word mask1 = pow(2,7);
    for(i = 2;i < 10;i++)
    {
